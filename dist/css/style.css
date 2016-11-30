@@ -231,3 +231,8 @@ body {
 .navbar.navbar-inverse.navbar-embossed.nav-footer {
     margin-bottom: 0px;
 }
+.row.demo-tiles {
+    margin-right: -3px;
+    margin-left: -3px;
+    background-color: #2980b9;
+}
