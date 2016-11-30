@@ -13,6 +13,7 @@
     <link href="../dist/css/style.css" rel="stylesheet">
     <link rel="shortcut icon" href="img/favicon.ico">
     <link rel="stylesheet" href="../dist/css/flipster.min.css" >
+    <link rel="stylesheet" href="../dist/css/jquery.grister.css" >
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
     <!--[if lt IE 9]>
@@ -200,6 +201,73 @@
               </ul>
             </div>
 </section>
+<section>
+  <!-- <div class="col-xs-4">
+          <div class="todo">
+            <div class="todo-search">
+              <input class="todo-search-field" value="" placeholder="Search" type="search">
+            </div>
+            <ul>
+              <li class="todo-done">
+                <div class="todo-icon fui-user"></div>
+                <div class="todo-content">
+                  <h4 class="todo-name">
+                    Meet <strong>Adrian</strong> at <strong>6pm</strong>
+                  </h4>
+                  Times Square
+                </div>
+              </li>
+              <li>
+                <div class="todo-icon fui-list"></div>
+                <div class="todo-content">
+                  <h4 class="todo-name">
+                    Chat with <strong>V.Kudinov</strong>
+                  </h4>
+                  Skype conference an 9 am
+                </div>
+              </li>
+              <li>
+                <div class="todo-icon fui-eye"></div>
+                <div class="todo-content">
+                  <h4 class="todo-name">
+                    Watch <strong>Iron Man</strong>
+                  </h4>
+                  1998 Broadway
+                </div>
+              </li>
+              <li>
+                <div class="todo-icon fui-time"></div>
+                <div class="todo-content">
+                  <h4 class="todo-name">
+                    Fix bug on a <strong>Website</strong>
+                  </h4>
+                  As soon as possible
+                </div>
+              </li>
+            </ul>
+          </div><!-- /.todo -->
+        <!-- </div> -->
+        <section>
+            <br><p class="lead"> Social.</p>
+
+            <div class="col-md-8">
+<section id="photos"></section>
+</div>
+<div class="col-md-4 twitter-bg">
+
+  <a class="twitter-timeline"
+href="https://twitter.com/TwitterDev"
+data-chrome="nofooter noborders"
+data-tweet-limit="1">
+@HamiltonTown
+</a>
+<ul class="pagination">
+  <li class="previous"><a href="#fakelink" class="fui-arrow-left"></a></li>
+  <li class="next"><a href="#fakelink" class="fui-arrow-right"></a></li>
+</ul>
+</div>
+        </section>
+</section>
     <!-- /.main-content -->
 </div>
 
@@ -207,8 +275,41 @@
     <script src="../dist/js/vendor/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="../dist/js/vendor/video.js"></script>
+    <script>window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+  if (d.getElementById(id)) return t;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://platform.twitter.com/widgets.js";
+  fjs.parentNode.insertBefore(js, fjs);
+
+  t._e = [];
+  t.ready = function(f) {
+    t._e.push(f);
+  };
+
+  return t;
+}(document, "script", "twitter-wjs"));</script>
+<script src="https://unpkg.com/masonry-layout@4.1/dist/masonry.pkgd.min.js"></script>
+<script>
+function getRandomSize(min, max) {
+  return Math.round(Math.random() * (max - min) + min);
+}
+
+var allImages = "";
+
+for (var i = 0; i < 10; i++) {
+  var width = getRandomSize(200, 400);
+  var height =  getRandomSize(200, 400);
+  allImages += '<img src="https://placekitten.com/'+width+'/'+height+'" alt="pretty kitty">';
+}
+
+$('#photos').append(allImages);
+</script>
     <script src="../dist/js/flat-ui.min.js"></script>
     <script src="../dist/js/flipster.js"></script>
+    <script src="../dist/js/jquery.gridster.js"></script>
 
   </body>
 </html>
